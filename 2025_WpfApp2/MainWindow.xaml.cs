@@ -26,24 +26,24 @@ namespace _2025_WpfApp2
 
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            var targetTextBox = sender as TextBox;
-            int amount;
-            bool success = int.TryParse(targetTextBox.Text, out amount);
-            if (!success || amount < 0)
-            {
-                MessageBox.Show("請輸入正整數", "輸入錯誤");
-            }
-            else
-            {
-                //MessageBox.Show($"您輸入的數量是 {amount}", "輸入成功");
-                var targetStackPanel = targetTextBox.Parent as StackPanel;
-                var targetNameLabel = targetStackPanel.Children[0] as Label;
-                var targetPriceLabel = targetStackPanel.Children[1] as Label;
+        //private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        //{
+        //    var targetTextBox = sender as TextBox;
+        //    int amount;
+        //    bool success = int.TryParse(targetTextBox.Text, out amount);
+        //    if (!success || amount < 0)
+        //    {
+        //        MessageBox.Show("請輸入正整數", "輸入錯誤");
+        //    }
+        //    else
+        //    {
+        //        //MessageBox.Show($"您輸入的數量是 {amount}", "輸入成功");
+        //        var targetStackPanel = targetTextBox.Parent as StackPanel;
+        //        var targetNameLabel = targetStackPanel.Children[0] as Label;
+        //        var targetPriceLabel = targetStackPanel.Children[1] as Label;
 
-                MessageBox.Show($"您點的餐點是 {targetNameLabel.Content}，單價是 {targetPriceLabel.Content}，數量是 {amount}", "輸入成功");
-            }
-        }
+        //        MessageBox.Show($"您點的餐點是 {targetNameLabel.Content}，單價是 {targetPriceLabel.Content}，數量是 {amount}", "輸入成功");
+        //    }
+        //}
     }
 }
