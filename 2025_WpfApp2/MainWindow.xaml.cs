@@ -8,7 +8,7 @@ namespace _2025_WpfApp2
     /// </summary>
     public partial class MainWindow : Window
     {
-        Dictionary<string, int> drinks = new Dictionary<string, int> 
+        Dictionary<string, int> drinks = new Dictionary<string, int>
         {
             {"紅茶大杯", 60 },
             {"紅茶小杯", 40 },
@@ -19,6 +19,7 @@ namespace _2025_WpfApp2
         };
 
         Dictionary<string, int> orders = new Dictionary<string, int>();
+        string buy_type = "外帶";
 
         public MainWindow()
         {
@@ -27,9 +28,23 @@ namespace _2025_WpfApp2
 
         private void OrderButton_Click(object sender, RoutedEventArgs e)
         {
+            orders.Clear();
+
+            for (int i = 0; i < DrinkMenu_StackPanel.Children.Count; i++)
+            {
+                var sp = DrinkMenu_StackPanel.Children[i] as StackPanel;
+                var cb = sp.Children[0] as CheckBox;
+                var drinkName = cb.Content.ToString();
+                var sl = sp.Children[2] as Slider;
+                var amount = (int)sl.Value;
+
+                if (cb.IsChecked == true && amount > 0) orders.Add(drinkName, amount);
+            }
+
             int total = 0;
             int index = 0;
-            Result_TextBlock.Text = "飲料訂單如下：\n";
+            Result_TextBlock.Text = $"購買方式：{buy_type}\n";
+            Result_TextBlock.Text += "飲料訂單如下：\n";
             foreach (var item in orders)
             {
                 string drinkitem = item.Key;
@@ -67,38 +82,11 @@ namespace _2025_WpfApp2
             Result_TextBlock.Text += $"\n折扣：{discount_message}，售價{sellPrice}元\n";
         }
 
-        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
-            var targetSlider = sender as Slider;
-            int amount = (int)targetSlider.Value;
-            var targetStackPanel = targetSlider.Parent as StackPanel;
-            var targetNameLabel = targetStackPanel.Children[0] as Label;
-            var drinkName = targetNameLabel.Content.ToString();
-
-            //MessageBox.Show($"您點的餐點是 {drinkName}，單價是 {drinks[drinkName]}，數量是 {amount}", "輸入成功");
-
-            if (orders.ContainsKey(drinkName)) orders[drinkName] = amount;
-            else orders.Add(drinkName, amount);
+            RadioButton targetRadioButton = sender as RadioButton;
+            buy_type = targetRadioButton.Content.ToString();
         }
-
-        //private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        //{
-        //    var targetTextBox = sender as TextBox;
-        //    int amount;
-        //    bool success = int.TryParse(targetTextBox.Text, out amount);
-        //    if (!success || amount < 0)
-        //    {
-        //        MessageBox.Show("請輸入正整數", "輸入錯誤");
-        //    }
-        //    else
-        //    {
-        //        //MessageBox.Show($"您輸入的數量是 {amount}", "輸入成功");
-        //        var targetStackPanel = targetTextBox.Parent as StackPanel;
-        //        var targetNameLabel = targetStackPanel.Children[0] as Label;
-        //        var targetPriceLabel = targetStackPanel.Children[1] as Label;
-
-        //        MessageBox.Show($"您點的餐點是 {targetNameLabel.Content}，單價是 {targetPriceLabel.Content}，數量是 {amount}", "輸入成功");
-        //    }
-        //}
     }
 }

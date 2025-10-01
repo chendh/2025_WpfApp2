@@ -12,49 +12,57 @@
             <ColumnDefinition MinWidth="100"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="243"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="250"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <StackPanel Margin="2,2,2,2">
-            <StackPanel Height="34" Background="#FFF3EBEB" Margin="5,5,5,0" Orientation="Horizontal">
-                <Label Content="紅茶大杯" FontSize="14" FontWeight="Bold" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,2,0,2" Height="30"/>
+        <StackPanel x:Name="DrinkMenu_StackPanel" Margin="10,10,10,10" Grid.Row="1">
+            <StackPanel Height="34" Background="#FFF3EBEB" Margin="5,5,5,0" Orientation="Horizontal" VerticalAlignment="Center">
+                <CheckBox Content="紅茶大杯" FontSize="14" FontWeight="Bold" Width="100" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,2,0,2" Height="30" VerticalContentAlignment="Center"/>
                 <Label Content="60元" FontSize="14" FontWeight="Bold" Width="80" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,2,0,2" Height="30" Foreground="#FFEF2D2D"/>
-                <Slider x:Name="slider1" Width="200" VerticalAlignment="Center" Maximum="20" IsSnapToTickEnabled="True" TickPlacement="Both" ValueChanged="Slider_ValueChanged"/>
+                <Slider x:Name="slider1" Width="200" VerticalAlignment="Center" Maximum="20" IsSnapToTickEnabled="True" TickPlacement="Both"/>
                 <Label Content="{Binding Value, ElementName=slider1}" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="#FF1C4EE8" Margin="20,0,0,0"/>
             </StackPanel>
             <StackPanel Height="34" Background="#FFF3EBEB" Margin="5,5,5,0" Orientation="Horizontal">
-                <Label Content="紅茶小杯" FontSize="14" FontWeight="Bold" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,2,0,2" Height="30"/>
+                <CheckBox Content="紅茶小杯" FontSize="14" FontWeight="Bold" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,2,0,2" Height="30" VerticalContentAlignment="Center"/>
                 <Label Content="40元" FontSize="14" FontWeight="Bold" Width="80" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,2,0,2" Height="30" Foreground="#FFEF2D2D"/>
-                <Slider x:Name="slider2" Width="200" VerticalAlignment="Center" Maximum="20" IsSnapToTickEnabled="True" TickPlacement="Both" ValueChanged="Slider_ValueChanged"/>
+                <Slider x:Name="slider2" Width="200" VerticalAlignment="Center" Maximum="20" IsSnapToTickEnabled="True" TickPlacement="Both"/>
                 <Label Content="{Binding Value, ElementName=slider2}" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="#FF1C4EE8" Margin="20,0,0,0"/>
             </StackPanel>
             <StackPanel Height="34" Background="#FFF3EBEB" Margin="5,5,5,0" Orientation="Horizontal">
-                <Label Content="綠茶大杯" FontSize="14" FontWeight="Bold" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,2,0,2" Height="30"/>
+                <CheckBox Content="綠茶大杯" FontSize="14" FontWeight="Bold" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,2,0,2" Height="30" VerticalContentAlignment="Center"/>
                 <Label Content="60元" FontSize="14" FontWeight="Bold" Width="80" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,2,0,2" Height="30" Foreground="#FFEF2D2D"/>
-                <Slider x:Name="slider3" Width="200" VerticalAlignment="Center" Maximum="20" IsSnapToTickEnabled="True" TickPlacement="Both" ValueChanged="Slider_ValueChanged"/>
+                <Slider x:Name="slider3" Width="200" VerticalAlignment="Center" Maximum="20" IsSnapToTickEnabled="True" TickPlacement="Both"/>
                 <Label Content="{Binding Value, ElementName=slider3}" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="#FF1C4EE8" Margin="20,0,0,0"/>
             </StackPanel>
             <StackPanel Height="34" Background="#FFF3EBEB" Margin="5,5,5,0" Orientation="Horizontal">
-                <Label Content="綠茶小杯" FontSize="14" FontWeight="Bold" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,2,0,2" Height="30"/>
+                <CheckBox Content="綠茶小杯" FontSize="14" FontWeight="Bold" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,2,0,2" Height="30" VerticalContentAlignment="Center"/>
                 <Label Content="40元" FontSize="14" FontWeight="Bold" Width="80" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,2,0,2" Height="30" Foreground="#FFEF2D2D"/>
-                <Slider x:Name="slider4" Width="200" VerticalAlignment="Center" Maximum="20" IsSnapToTickEnabled="True" TickPlacement="Both" ValueChanged="Slider_ValueChanged"/>
+                <Slider x:Name="slider4" Width="200" VerticalAlignment="Center" Maximum="20" IsSnapToTickEnabled="True" TickPlacement="Both"/>
                 <Label Content="{Binding Value, ElementName=slider4}" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="#FF1C4EE8" Margin="20,0,0,0"/>
             </StackPanel>
             <StackPanel Height="34" Background="#FFF3EBEB" Margin="5,5,5,0" Orientation="Horizontal">
-                <Label Content="可樂大杯" FontSize="14" FontWeight="Bold" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,2,0,2" Height="30"/>
+                <CheckBox Content="可樂大杯" FontSize="14" FontWeight="Bold" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,2,0,2" Height="30" VerticalContentAlignment="Center"/>
                 <Label Content="40元" FontSize="14" FontWeight="Bold" Width="80" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,2,0,2" Height="30" Foreground="#FFEF2D2D"/>
-                <Slider x:Name="slider5" Width="200" VerticalAlignment="Center" Maximum="20" IsSnapToTickEnabled="True" TickPlacement="Both" ValueChanged="Slider_ValueChanged"/>
+                <Slider x:Name="slider5" Width="200" VerticalAlignment="Center" Maximum="20" IsSnapToTickEnabled="True" TickPlacement="Both"/>
                 <Label Content="{Binding Value, ElementName=slider5}" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="#FF1C4EE8" Margin="20,0,0,0"/>
             </StackPanel>
             <StackPanel Height="34" Background="#FFF3EBEB" Margin="5,5,5,0" Orientation="Horizontal">
-                <Label Content="可樂小杯" FontSize="14" FontWeight="Bold" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,2,0,2" Height="30"/>
+                <CheckBox Content="可樂小杯" FontSize="14" FontWeight="Bold" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,2,0,2" Height="30" VerticalContentAlignment="Center"/>
                 <Label Content="20元" FontSize="14" FontWeight="Bold" Width="80" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,2,0,2" Height="30" Foreground="#FFEF2D2D"/>
-                <Slider x:Name="slider6" Width="200" VerticalAlignment="Center" Maximum="20" IsSnapToTickEnabled="True" TickPlacement="Both" ValueChanged="Slider_ValueChanged"/>
+                <Slider x:Name="slider6" Width="200" VerticalAlignment="Center" Maximum="20" IsSnapToTickEnabled="True" TickPlacement="Both"/>
                 <Label Content="{Binding Value, ElementName=slider6}" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="#FF1C4EE8" Margin="20,0,0,0"/>
             </StackPanel>
 
         </StackPanel>
-        <Button x:Name="OrderButton" Grid.Column="1" Content="訂購" Margin="85,101,85,101" FontSize="16" Click="OrderButton_Click"/>
-        <TextBlock x:Name="Result_TextBlock" Margin="10,10,10,10" Grid.Row="1" TextWrapping="Wrap" FontSize="16" Background="#FFF3F5E3" Grid.ColumnSpan="2" Padding="10,10,10,10"/>
+        <Button x:Name="OrderButton" Grid.Column="1" Content="訂購" Margin="85,93,85,101" FontSize="16" Click="OrderButton_Click" Grid.Row="1"/>
+        <TextBlock x:Name="Result_TextBlock" Margin="10,10,10,10" Grid.Row="2" TextWrapping="Wrap" FontSize="16" Background="#FFF3F5E3" Grid.ColumnSpan="2" Padding="10,10,10,10"/>
+        <GroupBox Header="內用/外帶" Background="#FFF0F3EB" Grid.ColumnSpan="2" Margin="10,5,10,5">
+            <StackPanel Orientation="Horizontal">
+                <RadioButton x:Name="RadioButton1" Content="內用" HorizontalAlignment="Left" Margin="30,5,0,5" Width="100" FontSize="16" FontWeight="Bold" Foreground="Blue" VerticalContentAlignment="Center" Checked="RadioButton_Checked" IsChecked="True"/>
+                <RadioButton x:Name="RadioButton2" Content="外帶" HorizontalAlignment="Left" Margin="30,5,0,5" Width="100" FontSize="16" FontWeight="Bold" Foreground="Blue" VerticalContentAlignment="Center" Checked="RadioButton_Checked"/>
+            </StackPanel>
+
+        </GroupBox>
     </Grid>
 </Window>
